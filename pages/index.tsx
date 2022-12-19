@@ -27,7 +27,7 @@ export default function Home() {
           </div>
         </nav>
         <div className="container flex-1 w-full grid grid-cols-1 md:grid-cols-2 md:gap-x-14 items-center justify-around">
-          <div className="h-fit w-full md:h-full flex flex-col items-center justify-center space-y-2 md:space-y-5">
+          <div className="h-fit w-full md:h-full flex flex-col items-center justify-center space-y-5">
             <h1 className="text-3xl md:text-5xl font-medium md:font-bold leading-relaxed text-center md:text-left">
               Premium Meetings free for everyone 🤘🏾
             </h1>
@@ -35,7 +35,7 @@ export default function Home() {
               Create a More secure, more flexible, and completely free video
               conference.
             </p>
-            <div className="grid grid-cols-12 w-full gap-x-5">
+            <div className="grid grid-cols-12 w-full gap-x-2 md:gap-x-5">
               <Input
                 className="shadow-md col-span-8"
                 placeholder="Enter meeting code"

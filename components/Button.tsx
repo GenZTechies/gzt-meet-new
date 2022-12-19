@@ -7,7 +7,7 @@ const Button = ({
 }: React.HTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`px-5 py-3 text-white bg-primary hover:bg-primary-dark active:bg-primary rounded-sm min-w-fit ${className}`}
+      className={`px-5 py-3 text-white bg-primary hover:bg-primary-dark active:bg-primary rounded-xl min-w-fit ${className}`}
       {...props}
     >
       {children}
