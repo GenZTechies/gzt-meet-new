@@ -7,7 +7,25 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const [meetcode, setMeetCode] = React.useState<string>("");
+  const [error, setError] = React.useState<string>("");
   const router = useRouter();
+  const handleJoinMeeting = React.useCallback(() => {
+    const code = meetcode.replaceAll("-", "").toUpperCase();
+    if (code.length === 9) {
+      let new_code = `${code.substring(0, 3)}-${code.substring(
+        3,
+        6
+      )}-${code.substring(6, 10)}`;
+      router.push(`/${new_code}`);
+    } else {
+      setError("Wrong code");
+    }
+  }, [meetcode]);
+
+  React.useEffect(() => {
+    setError("");
+  }, [meetcode]);
+
   return (
     <>
       <Head>
@@ -39,18 +57,20 @@ export default function Home() {
               Create a More secure, more flexible, and completely free video
               conference.
             </p>
-            <div className="grid grid-cols-12 w-full gap-x-2 md:gap-x-5">
+            <div className="flex flex-row items-center justify-center md:justify-start w-full space-x-4">
               <Input
-                className="shadow-md col-span-8"
+                className="shadow-sm text-sm  border !border-primary"
                 placeholder="Enter meeting code"
                 value={meetcode}
                 onChange={(event) => setMeetCode(event.currentTarget.value)}
               />
               <Button
-                onClick={() => alert(meetcode)}
-                className="shadow-md col-span-4 py-4 rounded-lg"
+                onClick={handleJoinMeeting}
+                className={`shadow-md  rounded-lg ${
+                  Boolean(error) ? "bg-red-700" : ""
+                }`}
               >
-                Join
+                {error ? error : "Join"}
               </Button>
             </div>
           </div>

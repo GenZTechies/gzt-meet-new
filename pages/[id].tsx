@@ -48,6 +48,9 @@ const Meeting = () => {
         onApiReady={() => {
           handleCloseLoadingState();
         }}
+        onReadyToClose={() => {
+          router.push("/");
+        }}
       />
     </main>
   );
