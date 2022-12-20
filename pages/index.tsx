@@ -3,9 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 // import {  Sora } from "@next/font/google";
 import { Button, Input } from "../components";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [meetcode, setMeetCode] = React.useState<string>("");
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -23,7 +25,9 @@ export default function Home() {
             <h1>Genz Meet</h1>
           </div>
           <div>
-            <Button className="rounded-lg">Create New Meeting</Button>
+            <Button onClick={() => router.push("/new")} className="rounded-lg">
+              Create New Meeting
+            </Button>
           </div>
         </nav>
         <div className="container flex-1 w-full grid grid-cols-1 md:grid-cols-2 md:gap-x-14 items-center justify-around">

@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 
 const SplashScreen = () => {
   const [show, setShow] = React.useState<boolean>(true);
@@ -17,11 +18,7 @@ const SplashScreen = () => {
                 <h1 className="text-primary text-xl font-semibold">
                   GenZ Meet
                 </h1>
-                <div className="leap-frog">
-                  <div className="leap-frog__dot"></div>
-                  <div className="leap-frog__dot"></div>
-                  <div className="leap-frog__dot"></div>
-                </div>
+                <Loader />
               </div>
             </div>
           </main>
