@@ -67,7 +67,7 @@ export default function Home() {
               <Button
                 onClick={handleJoinMeeting}
                 className={`shadow-md  rounded-lg ${
-                  Boolean(error) ? "bg-red-700" : ""
+                  Boolean(error) ? "!bg-red-700 !hover:bg-red-700" : ""
                 }`}
               >
                 {error ? error : "Join"}
